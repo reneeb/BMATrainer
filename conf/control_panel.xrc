@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxPanel" name="ControlPanel">
+		<style>wxTAB_TRAVERSAL</style>
+		<size>467,426</size>
+		<bg>#000000</bg>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALIGN_CENTER_HORIZONTAL|wxTOP</flag>
+				<border>40</border>
+				<object class="wxStaticText" name="control_panel_headline">
+					<fg>#ffffff</fg>
+					<font>
+						<size>18</size>
+						<family>default</family>
+						<style>normal</style>
+						<weight>normal</weight>
+						<underlined>0</underlined>
+					</font>
+					<label>Feuerwehr-Bedienfeld</label>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND|wxTOP</flag>
+				<border>20</border>
+				<object class="wxStaticLine" name="m_staticline1">
+					<style>wxLI_HORIZONTAL</style>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxBoxSizer">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_operating">
+											<bitmap>../img/green_on.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText28">
+											<fg>#f0f0f0</fg>
+											<label>Bedienfeld in Betrieb</label>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline611">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_extinguisher">
+											<bitmap>../img/red_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText281">
+											<fg>#f0f0f0</fg>
+											<label>Löschanlage ausgelöst</label>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline61">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_audio">
+											<bitmap>../img/orange_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="control_panel_signals">
+											<fg>#f0f0f0</fg>
+											<label>Akustische Signale ab</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="m_button5">
+											<size>30,30</size>
+											<label></label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline6">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_off">
+											<bitmap>../img/orange_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText283">
+											<fg>#f0f0f0</fg>
+											<label>Abschaltung               </label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="m_button6">
+											<size>30,30</size>
+											<label></label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxEXPAND | wxALL</flag>
+						<border>5</border>
+						<object class="wxStaticLine" name="m_staticline25">
+							<style>wxLI_VERTICAL</style>
+							<fg>#f0f0f0</fg>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxBoxSizer">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_alarm">
+											<bitmap>../img/red_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText284">
+											<fg>#f0f0f0</fg>
+											<label>ÜE ausgelöst</label>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline6111">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_firecontrol">
+											<bitmap>../img/orange_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText2811">
+											<fg>#f0f0f0</fg>
+											<label>Brandfallsteuerung ab</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="m_button7">
+											<size>30,30</size>
+											<label></label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline612">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBitmap" name="control_bmz">
+											<bitmap>../img/red_off.gif</bitmap>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText2821">
+											<fg>#f0f0f0</fg>
+											<label>BMZ rückstellen           </label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="control_btn_bmz">
+											<size>30,30</size>
+											<label></label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxEXPAND | wxALL</flag>
+								<border>5</border>
+								<object class="wxStaticLine" name="m_staticline62">
+									<style>wxLI_HORIZONTAL</style>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxGridBagSizer">
+									<vgap>0</vgap>
+									<hgap>0</hgap>
+									<growablecols></growablecols>
+									<growablerows></growablerows>
+									<object class="sizeritem">
+										<cellpos>0,0</cellpos>
+										<cellspan>1,3</cellspan>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText45">
+											<fg>#f0f0f0</fg>
+											<label>    ÜE Nr</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<cellpos>0,3</cellpos>
+										<cellspan>3,1</cellspan>
+										<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+										<object class="wxButton" name="m_button9">
+											<size>30,30</size>
+											<label></label>
+											<default>0</default>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<cellpos>1,2</cellpos>
+										<cellspan>1,1</cellspan>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText49">
+											<label></label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<cellpos>1,0</cellpos>
+										<cellspan>1,1</cellspan>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText48">
+											<size>2,-1</size>
+											<label>MyLabel</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<cellpos>1,1</cellpos>
+										<cellspan>1,1</cellspan>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText46">
+											<size>80,20</size>
+											<bg>#f0f0f0</bg>
+											<label>MyLabel</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<cellpos>2,0</cellpos>
+										<cellspan>1,2</cellspan>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText47">
+											<fg>#f0f0f0</fg>
+											<label>    prüfen</label>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>

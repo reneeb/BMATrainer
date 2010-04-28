@@ -1,0 +1,34 @@
+---
+tableau_alarm_lamp:
+  0: red_off.gif
+  1: red_on.gif
+tableau_error_lamp:
+  0: orange_off.gif
+  1: orange_on.gif
+tableau_off_lamp:
+  0: orange_off.gif
+  1: orange_on.gif
+tableau_operating_lamp:
+  0: green_off.gif
+  1: green_on.gif
+control_operating:
+  0: green_off.gif
+  1: green_on.gif
+control_extinguisher:
+  0: red_off.gif
+  1: red_on.gif
+control_audio:
+  0: orange_off.gif
+  1: orange_on.gif
+control_off:
+  0: orange_off.gif
+  1: orange_on.gif
+control_alarm:
+  0: red_off.gif
+  1: red_on.gif
+control_firecontrol:
+  0: orange_off.gif
+  1: orange_on.gif
+control_bmz:
+  0: red_off.gif
+  1: red_on.gif

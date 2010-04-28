@@ -1,0 +1,20 @@
+---
+plugins:
+  - type: input
+    module: Counter
+    active: 0
+    label: Feuermelder
+  - type: input
+    module: Feuermelder
+    active: 1
+    label: Feuermelder
+  - type: output
+    module: Sirene
+    event: AlarmStart
+    active: 1
+    label: Sirene
+  - type: output
+    module: Sirene2
+    event: AlarmStart
+    active: 0
+    label: Sirene2
