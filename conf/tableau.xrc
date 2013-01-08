@@ -134,7 +134,7 @@
 									<flag>wxALL</flag>
 									<border>5</border>
 									<object class="wxStaticText" name="tableau_firstMessage_line2">
-										<label>(c) 2009 - Smart-Websolutions Windolph und Bäcker GbR</label>
+										<label>(c) 2012 Perl-Services.de Renée Bäcker</label>
 									</object>
 								</object>
 								<object class="sizeritem">
@@ -319,7 +319,7 @@
 								<option>0</option>
 								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
 								<border>5</border>
-								<object class="wxButton" name="m_button4">
+								<object class="wxButton" name="level_button">
 									<size>30,30</size>
 									<label></label>
 									<default>0</default>
@@ -355,7 +355,7 @@
 								<option>0</option>
 								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
 								<border>5</border>
-								<object class="wxButton" name="m_button5">
+								<object class="wxButton" name="local_alarm_button">
 									<size>30,30</size>
 									<label></label>
 									<default>0</default>

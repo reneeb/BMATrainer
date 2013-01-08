@@ -147,6 +147,40 @@ sub OnInit {
     # reset bmz
     my $bmz_button = $self->get_element( 'control_btn_bmz' );
     EVT_BUTTON( $self, $bmz_button, sub{ $self->reset_bmz } );
+
+    # check bma
+    my $check_bma_button = $self->get_element( 'check_bma_button' );
+    EVT_BUTTON( $self, $check_bma_button, sub{ $self->check_bma } );
+
+    # display level
+    my $level_button = $self->get_element( 'level_button' );
+    EVT_LEFT_DOWN( $level_button, sub { $self->{level_start} = time } );
+    EVT_LEFT_UP( $level_button, sub {
+        $self->logger->debug( $self->{level_start} );
+        $self->logger->debug( time );
+        if ( time - $self->{level_start} < 5 ) {
+            $self->change_display_level;
+        }
+        else {
+            $self->show_history;
+        }
+    });
+    
+    # local alarm
+    my $local_alarm_button = $self->get_element( 'local_alarm_button' );
+    EVT_LEFT_DOWN( $local_alarm_button, sub { $self->{local_alarm_button_start} = time } );
+    EVT_LEFT_UP( $local_alarm_button, sub {
+        if ( time - $self->{local_alarm_button_start} < 5 ) {
+            $self->turn_off_local_alarm;
+        }
+        else {
+            $self->start_local_alarm;
+        }
+    });
+
+    # turn bma off
+    my $off_button = $self->get_element( 'off_button' );
+    EVT_BUTTON( $self, $off_button, sub { $self->turn_off_bma } );
     
     # add logging
     

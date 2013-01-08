@@ -178,7 +178,7 @@
 										<option>0</option>
 										<flag>wxALL</flag>
 										<border>5</border>
-										<object class="wxButton" name="m_button6">
+										<object class="wxButton" name="off_button">
 											<size>30,30</size>
 											<label></label>
 											<default>0</default>
@@ -346,7 +346,7 @@
 										<cellspan>3,1</cellspan>
 										<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
-										<object class="wxButton" name="m_button9">
+										<object class="wxButton" name="check_bma_button">
 											<size>30,30</size>
 											<label></label>
 											<default>0</default>
@@ -379,7 +379,7 @@
 										<object class="wxStaticText" name="m_staticText46">
 											<size>80,20</size>
 											<bg>#f0f0f0</bg>
-											<label>MyLabel</label>
+											<label>08/15</label>
 										</object>
 									</object>
 									<object class="sizeritem">

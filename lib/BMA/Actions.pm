@@ -12,11 +12,101 @@ our @EXPORT_OK = qw(
     display_message
     start_alarm
     reset_bmz
+    change_display_level
+    show_history
+    turn_off_audio
+    turn_off_local_alarm
+    turn_off_bma
+    start_local_alarm
+    check_bma
+    _bma_is_off
 );
 
 our %EXPORT_TAGS = (
     all => [ @EXPORT_OK ],
 );
+
+sub _bma_is_off {
+    my ($self) = @_;
+
+    return 1 if $self->{bma_off};
+}
+
+sub turn_off_bma {
+    my ($self) = @_;
+
+    my $new_value = $self->{bma_off} ^ 1;
+
+    $self->set_led( 'tableau_off_lamp', $new_value );
+    $self->set_led( 'control_off',      $new_value );
+    $self->{bma_off} = $new_value;
+}
+
+sub check_bma {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'CheckBMA',
+    );
+    
+    $self->set_led( 'tableau_alarm_lamp', 1 );
+    $self->set_led( 'control_alarm',      1 );
+}
+
+sub turn_off_local_alarm {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'StopLocalAlarm',
+    );
+    
+    $self->{stop_local_alarm} = 1;
+}
+
+sub start_local_alarm {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'StartLocalAlarm',
+    );
+    
+    my $sleep = 0.5;
+
+    while ( !$self->{stop_local_alarm} ) {
+        $self->logger->debug( 'beep' );
+        my $timer = Wx::Timer->new( $self->{frame}, wxID_ANY );
+        $timer->Start( ( $sleep * 1000 ) + 1, 1 );
+        EVT_TIMER( $self->{frame}, $timer, sub{ print "\a" } );
+        select undef, undef, undef, $sleep;
+    }
+
+    $self->{stop_local_alarm} = 0;
+}
+
+sub turn_off_audio {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'TurnOffGlobalAlarm',
+    );
+}
+
+sub change_display_level {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'ChangeDisplayLevel',
+    );
+}
+
+sub show_history {
+    my ($self) = @_;
+
+    $self->event(
+        event => 'ShowHistory',
+    );
+    
+}
 
 sub display_message {
     my ($self,$message,$timer) = @_;
@@ -84,6 +174,22 @@ sub reset_bmz {
     
     $self->set_led( 'tableau_alarm_lamp', 0 );
     $self->set_led( 'control_alarm',      0 );
+    $self->set_led( 'control_bmz',        1 );
+
+    # reset displayed messages
+    my ($line1,$line2) = $self->get_label( 'first' );
+    $line1->SetLabel( '' );
+    $line2->SetLabel( '' );
+    my ($last1,$last2) = $self->get_label( 'last' );
+    $last1->SetLabel( '' );
+    $last2->SetLabel( '' );
+
+    # the control led will be reset after 15 minutes
+    # and the history will be deleted
+    my $timer = Wx::Timer->new( $self->{frame}, wxID_ANY );
+    my $wait  = 15 * 60 * 1000;
+    $timer->Start( $wait + 1, 1 );
+    EVT_TIMER( $self->{frame}, $timer, sub{ $self->{messages} = []; $self->set_led( 'control_bmz', 0 ); } );
 }
 
 sub start_alarm {

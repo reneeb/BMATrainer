@@ -6,6 +6,6 @@ plugins:
     label: Feuermelder
   - type: output
     module: Sirene
-    event: AlarmStart
+    event: AlarmStart|TurnOffGlobalAlarm
     active: 0
     label: Sirene

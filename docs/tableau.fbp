@@ -1673,7 +1673,7 @@
                                         <property name="label"></property>
                                         <property name="maximum_size"></property>
                                         <property name="minimum_size"></property>
-                                        <property name="name">m_button4</property>
+                                        <property name="name">level_button</property>
                                         <property name="permission">protected</property>
                                         <property name="pos"></property>
                                         <property name="size">30,30</property>
