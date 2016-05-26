@@ -15,6 +15,7 @@ use File::Basename;
 use Log::Log4perl;
 use Path::Class;
 use YAML::Tiny;
+use Time::Piece;
 
 use BMA::Actions qw(:all);
 use BMA::ContextMenu;
@@ -184,8 +185,9 @@ sub OnInit {
     
     # add logging
     
-    $frame->SetSizer( $main_sizer );
-    $frame->SetAutoLayout(1);
+    #$frame->SetSizer( $main_sizer );
+    #$frame->SetAutoLayout(1);
+    $frame->SetSizerAndFit($main_sizer );
     
     $frame->Show(1);
     
@@ -203,12 +205,19 @@ sub directory {
     my ($self) = @_;
     
     unless( $self->{conf_directory} ) {
-        # directory with all needed files
-        $self->{conf_directory} = Path::Class::Dir->new(
-            dirname( __FILE__ ),
-            '..',
-            'conf',
-        );
+        my $base_dir = Path::Class::Dir->new( dirname( __FILE__ ) )->parent;
+        
+        TRY:
+        for ( 1 .. 3 ) {
+            my $check_dir = Path::Class::Dir->new( $base_dir, 'conf' );
+            
+            if ( -d  $check_dir->stringify ) {
+                $self->{conf_directory} = $check_dir;
+                last TRY;
+            }
+            
+            $base_dir = $base_dir->parent;
+        }
     }
     
     return $self->{conf_directory};

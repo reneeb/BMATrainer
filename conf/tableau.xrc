@@ -134,7 +134,7 @@
 									<flag>wxALL</flag>
 									<border>5</border>
 									<object class="wxStaticText" name="tableau_firstMessage_line2">
-										<label>(c) 2012 Perl-Services.de Renée Bäcker</label>
+										<label>(c) 2012 - 2015 Renée Bäcker</label>
 									</object>
 								</object>
 								<object class="sizeritem">
